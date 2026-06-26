@@ -1,0 +1,6 @@
+http://:8080 {
+    handle /project_triceratops/admin* {
+        reverse_proxy localhost:3100
+    }
+    reverse_proxy localhost:3001
+}

@@ -1,0 +1,12 @@
+# deps
+node_modules/
+
+# build
+.next/
+
+# env (contains admin password)
+.env
+
+# misc
+*.log
+.DS_Store
