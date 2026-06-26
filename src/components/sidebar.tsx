@@ -36,15 +36,22 @@ export function Sidebar({
           collapsed ? "lg:w-14" : "lg:w-60"
         } ${mobileOpen ? "translate-x-0 w-72" : "-translate-x-full w-72 lg:translate-x-0"}`}
       >
-        {/* Logo */}
+        {/* Logo + collapse toggle */}
         <div className="flex h-14 items-center gap-2.5 border-b px-4">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground shrink-0">
             <Zap className="h-4 w-4" />
           </div>
           {!collapsed && <span className="font-semibold text-sm">Triceratops</span>}
           <button
+            onClick={onToggle}
+            className="ml-auto rounded-md p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors hidden lg:inline-flex"
+            title={collapsed ? "Expand" : "Collapse"}
+          >
+            {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+          </button>
+          <button
             onClick={onCloseMobile}
-            className="ml-auto rounded-md p-1 text-muted-foreground hover:bg-muted lg:hidden"
+            className="ml-auto rounded-md p-1.5 text-muted-foreground hover:bg-muted lg:hidden"
           >
             <X className="h-4 w-4" />
           </button>
@@ -85,16 +92,6 @@ export function Sidebar({
           ))}
         </nav>
 
-        {/* Collapse toggle — desktop only */}
-        <div className="hidden border-t p-2 lg:block">
-          <button
-            onClick={onToggle}
-            className="flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-          >
-            {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-            {!collapsed && "Collapse"}
-          </button>
-        </div>
       </aside>
     </>
   );

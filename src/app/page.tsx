@@ -38,7 +38,7 @@ function AdminShell() {
           error={error}
         />
         <main className="flex-1 overflow-auto">
-          <div className="mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+          <div className="mx-auto max-w-screen-2xl p-4 sm:p-6 lg:p-8">
             {error && (
               <div className="mb-4 flex items-center justify-between rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2.5 text-sm text-destructive">
                 <span className="break-all">{error}</span>

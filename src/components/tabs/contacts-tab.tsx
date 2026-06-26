@@ -7,7 +7,6 @@ import { useToast } from "@/components/ui/toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/field";
-import { PageHeader } from "./page-header";
 
 export function ContactsTab() {
   const { data, doApi, busy } = useStore();
@@ -45,7 +44,6 @@ export function ContactsTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Contacts" subtitle="Blocklist and VIP contacts." />
       <div className="grid gap-6 lg:grid-cols-3">
         <Card>
           <CardHeader>

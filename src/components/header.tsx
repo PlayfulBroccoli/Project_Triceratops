@@ -1,10 +1,11 @@
 "use client";
 
-import { Menu, RefreshCw, Zap, AlertCircle } from "lucide-react";
+import { Menu, RefreshCw, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TABS } from "@/lib/nav";
 import type { Health } from "@/lib/types";
+import type { TabId } from "@/lib/types";
 
 export function Header({
   active,
@@ -14,28 +15,24 @@ export function Header({
   health,
   error,
 }: {
-  active: string;
+  active: TabId;
   onMenu: () => void;
   onRefresh: () => void;
   refreshing: boolean;
   health: Health | null;
   error: string | null;
 }) {
-  const tab = TABS.find((t) => t.id === active);
   const online = health?.status === "ok" || health?.status === "online";
+  const tab = TABS.find((t) => t.id === active);
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur lg:px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-end gap-3 bg-background/80 px-4 pb-3 backdrop-blur sm:px-6 lg:px-8">
       <Button variant="ghost" size="icon" className="lg:hidden" onClick={onMenu} title="Open menu">
         <Menu size={18} />
       </Button>
 
-      <div className="flex items-center gap-2 lg:gap-3 min-w-0">
-        <Zap className="h-5 w-5 text-primary shrink-0 lg:hidden" />
-        <div className="min-w-0">
-          <h1 className="truncate text-base font-semibold leading-tight sm:text-lg">{tab?.label ?? "Admin"}</h1>
-          <p className="hidden truncate text-xs text-muted-foreground sm:block">{tab?.desc}</p>
-        </div>
+      <div className="flex items-baseline gap-2 min-w-0">
+        <h1 className="truncate text-xl font-semibold leading-tight sm:text-2xl">{tab?.label ?? "Admin"}</h1>
       </div>
 
       <div className="ml-auto flex items-center gap-2">

@@ -10,7 +10,7 @@ import {
 import type { TabId } from "@/lib/types";
 
 export const TABS: { id: TabId; label: string; icon: LucideIcon; desc: string }[] = [
-  { id: "Dashboard", label: "Dashboard", icon: LayoutDashboard, desc: "WhatsApp auto-reply control center" },
+  { id: "Dashboard", label: "Dashboard", icon: LayoutDashboard, desc: "WhatsApp auto-reply control center · auto-refreshes every 15s" },
   { id: "Contacts", label: "Contacts", icon: Users, desc: "Blocklist and VIP contacts" },
   { id: "Messages", label: "Messages", icon: MessageSquare, desc: "Send ad-hoc messages and manage canned replies" },
   { id: "Logs", label: "Logs", icon: ScrollText, desc: "Bridge events and admin audit trail" },

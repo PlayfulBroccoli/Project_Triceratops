@@ -7,7 +7,7 @@ import { useToast } from "@/components/ui/toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input, Textarea } from "@/components/ui/field";
-import { EmptyState, PageHeader } from "./page-header";
+import { EmptyState } from "./page-header";
 
 export function MessagesTab() {
   const { data, doApi, api, busy, refresh } = useStore();
@@ -36,7 +36,6 @@ export function MessagesTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Messages" subtitle="Send ad-hoc messages and manage canned replies." />
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>

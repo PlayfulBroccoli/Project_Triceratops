@@ -6,7 +6,6 @@ import { useToast } from "@/components/ui/toast";
 import { Badge, StatCard } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageHeader } from "./page-header";
 import { OverrideForm } from "./override-form";
 import { MODES, fmtDate, fmtUptime } from "@/lib/types";
 
@@ -17,8 +16,6 @@ export function DashboardTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Dashboard" subtitle="WhatsApp auto-reply control center. Auto-refreshes every 15s." />
-
       {override && (
         <div className="flex flex-col gap-3 rounded-xl border border-amber-300/60 bg-amber-50 p-4 dark:border-amber-500/40 dark:bg-amber-500/10 sm:flex-row sm:items-center sm:justify-between">
           <div>

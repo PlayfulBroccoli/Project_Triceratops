@@ -6,7 +6,7 @@ import { useToast } from "@/components/ui/toast";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { EmptyState, PageHeader } from "./page-header";
+import { EmptyState } from "./page-header";
 import { fmtMem } from "@/lib/types";
 
 export function ToolsTab() {
@@ -16,7 +16,6 @@ export function ToolsTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Tools" subtitle="Profile pics, PM2 control, and persona preview." />
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
@@ -44,7 +43,7 @@ export function ToolsTab() {
             {pics.length === 0 ? (
               <EmptyState message="No profile pictures uploaded." />
             ) : (
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4">
                 {pics.map((p) => (
                   <div
                     key={p.name}

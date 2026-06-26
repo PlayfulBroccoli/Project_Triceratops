@@ -5,7 +5,6 @@ import { RefreshCw } from "lucide-react";
 import { useStore } from "@/components/store";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input, Select } from "@/components/ui/field";
-import { PageHeader } from "./page-header";
 import { levelColor } from "@/lib/types";
 
 export function LogsTab() {
@@ -28,7 +27,6 @@ export function LogsTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Logs" subtitle="Bridge events and admin audit trail." />
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">

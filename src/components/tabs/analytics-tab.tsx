@@ -3,7 +3,7 @@
 import { useStore } from "@/components/store";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { EmptyState, PageHeader } from "./page-header";
+import { EmptyState } from "./page-header";
 
 export function AnalyticsTab() {
   const { data } = useStore();
@@ -11,7 +11,6 @@ export function AnalyticsTab() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Analytics" subtitle="7-day activity summary for admin and bridge." />
       {!analytics ? (
         <Card>
           <CardContent className="py-10">
